@@ -1,6 +1,7 @@
 package com.garbagedata.ars_decor.block;
 
 import com.garbagedata.ars_decor.ArsDecor;
+import com.garbagedata.ars_decor.item.ArsDecorItemRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -26,9 +27,18 @@ public class ArsDecorBlockRegistry {
             "sourcestone_pillar",
             registryName -> new Block(BlockBehaviour.Properties.of()
                     .explosionResistance(6.0f)
-                    .lightLevel(state -> 0)
             )
     );
+
+    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+        ArsDecorItemRegistry.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

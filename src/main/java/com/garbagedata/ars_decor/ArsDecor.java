@@ -3,6 +3,7 @@ package com.garbagedata.ars_decor;
 import com.garbagedata.ars_decor.registry.ModRegistry;
 import com.garbagedata.ars_decor.block.ArsDecorBlockRegistry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -10,6 +11,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -42,6 +44,19 @@ public class ArsDecor {
 
     private void doClientStuff(final FMLClientSetupEvent event) {
 
+    }
+
+    // please just get in my creative tab
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        // unused for now: items, ingredience
+        /*
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        }
+        */
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ArsDecorBlockRegistry.SOURCESTONE_PILLAR);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
