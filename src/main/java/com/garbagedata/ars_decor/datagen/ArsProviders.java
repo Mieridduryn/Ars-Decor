@@ -1,8 +1,8 @@
-package com.example.an_addon.datagen;
+package com.garbagedata.ars_decor.datagen;
 
-import com.example.an_addon.ArsNouveauRegistry;
-import com.example.an_addon.ExampleANAddon;
-import com.example.an_addon.glyphs.TestEffect;
+import com.garbagedata.ars_decor.ArsNouveauRegistry;
+import com.garbagedata.ars_decor.ArsDecor;
+import com.garbagedata.ars_decor.glyphs.TestEffect;
 import com.hollingsworth.arsnouveau.api.familiar.AbstractFamiliarHolder;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.api.spell.AbstractCastMethod;
@@ -31,12 +31,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static com.example.an_addon.datagen.Setup.provider;
+import static com.garbagedata.ars_decor.datagen.Setup.provider;
 import static com.hollingsworth.arsnouveau.setup.registry.RegistryHelper.getRegistryName;
 
 public class ArsProviders {
 
-    static String root = ExampleANAddon.MODID;
+    static String root = ArsDecor.MODID;
 
     public static class GlyphProvider extends GlyphRecipeProvider {
 

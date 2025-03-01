@@ -5,12 +5,16 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0+'
+    // Adds the Kotlin Gradle plugin
+    // id 'org.jetbrains.kotlin.jvm' version '1.8.21'
+    // OPTIONAL Kotlin Serialization plugin
+    // id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.21'
 }
 
 base {
     version = "${minecraft_version}-${mod_version}"
-    group = 'com.hollingsworth.an_addon' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-    archivesBaseName = 'an_addon'
+    group = 'com.garbagedata.ars_decor' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+    archivesBaseName = 'ars_decor'
 }
 
 // Mojang ships Java 21 to end users in 1.21+
@@ -146,7 +150,13 @@ repositories {
         url = uri("https://maven.octo-studios.com/releases")
     }
     maven { url 'https://jitpack.io' }
-
+    // KotlinForForge maven
+    '''
+    maven {
+        name = 'Kotlin for Forge'
+        url = 'https://thedarkcolour.github.io/KotlinForForge/'
+    }
+    '''
 }
 
 dependencies {
@@ -165,20 +175,22 @@ dependencies {
     // cyanide to debug worldgen, localRuntime configuration won't mark is a dependency
     // localRuntime "curse.maven:cyanide-541676:5782674"
 
+    // Adds KFF as dependency and Kotlin libs
+    // implementation 'thedarkcolour:kotlinforforge:3.12.0'
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "ArsNouveau Addon",
-                "Specification-Vendor"    : "exampleDev",
+                "Specification-Title"     : "Ars Decor",
+                "Specification-Vendor"    : "Garbage Data",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : "${version}",
-                "Implementation-Vendor"   : "exampleDev",
+                "Implementation-Vendor"   : "Garbage Data",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs"            : "an_addon.mixins.json"
+                "MixinConfigs"            : "ars_decor.mixins.json"
         ])
     }
 }

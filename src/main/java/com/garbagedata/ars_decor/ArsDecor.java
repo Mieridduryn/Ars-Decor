@@ -1,6 +1,7 @@
-package com.example.an_addon;
+package com.garbagedata.ars_decor;
 
-import com.example.an_addon.registry.ModRegistry;
+import com.garbagedata.ars_decor.registry.ModRegistry;
+import com.garbagedata.ars_decor.block.ArsDecorBlockRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -14,13 +15,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleANAddon.MODID)
-public class ExampleANAddon {
-    public static final String MODID = "an_addon";
+@Mod(ArsDecor.MODID)
+public class ArsDecor {
+    public static final String MODID = "ars_decor";
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public ExampleANAddon(IEventBus modEventBus, ModContainer modContainer) {
+    public ArsDecor(IEventBus modEventBus, ModContainer modContainer) {
+        // register my fucking blocks please
+        ArsDecorBlockRegistry.register(modEventBus);
+
         ModRegistry.registerRegistries(modEventBus);
         ArsNouveauRegistry.registerGlyphs();
         modEventBus.addListener(this::setup);
@@ -44,7 +48,7 @@ public class ExampleANAddon {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // do something when the server starts
-        LOGGER.info("HELLO from server starting");
+        LOGGER.info("Server started. Ars Decor!");
     }
 
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "side": "ars_decor:block/sourcestone_pillar",
+    "bottom": "ars_decor:block/sourcestone_pillar_top",
+    "top": "ars_decor:block/sourcestone_pillar_top"
+  }
+}

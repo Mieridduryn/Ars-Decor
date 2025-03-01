@@ -1,4 +1,4 @@
-package com.example.an_addon;
+package com.garbagedata.ars_decor;
 
 
 import net.neoforged.bus.api.SubscribeEvent;
