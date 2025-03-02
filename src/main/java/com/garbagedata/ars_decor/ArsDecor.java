@@ -2,6 +2,8 @@ package com.garbagedata.ars_decor;
 
 import com.garbagedata.ars_decor.block.ArsDecorBlockRegistry;
 import com.garbagedata.ars_decor.item.ArsDecorItemRegistry;
+import com.garbagedata.ars_decor.item.CreativeTabs;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
@@ -24,16 +26,16 @@ public class ArsDecor {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public ArsDecor(IEventBus modEventBus, ModContainer modContainer) {
+        modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::doClientStuff);
+        NeoForge.EVENT_BUS.register(this);
+
         // register my fucking blocks please
         ArsDecorBlockRegistry.register(modEventBus);
         // okay can it do items now?
         ArsDecorItemRegistry.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
-
-        modEventBus.addListener(this::setup);
-        modEventBus.addListener(this::doClientStuff);
-        NeoForge.EVENT_BUS.register(this);
     }
 
     public static ResourceLocation prefix(String path) {
@@ -50,14 +52,13 @@ public class ArsDecor {
 
     // please just get in my creative tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        // unused for now: items, ingredience
-        /*
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+
         }
-        */
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ArsDecorBlockRegistry.SOURCESTONE_PILLAR);
+            event.accept(ArsDecorBlockRegistry.SMOOTH_SOURCESTONE_PILLAR);
         }
     }
 
@@ -65,7 +66,7 @@ public class ArsDecor {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // do something when the server starts
-        LOGGER.info("Server started. Ars Decor!");
+        LOGGER.info("If you are seeing this message, Ars Decor is installed.");
     }
 
 }

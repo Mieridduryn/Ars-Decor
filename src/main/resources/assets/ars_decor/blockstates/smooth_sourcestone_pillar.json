@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": [
+      {"model": "ars_decor:block/smooth_sourcestone_pillar_horizontal", "x": 90, "y": 90}
+    ],
+    "axis=y": [
+      {"model": "ars_decor:block/smooth_sourcestone_pillar"}
+    ],
+    "axis=z": [
+      {"model": "ars_decor:block/smooth_sourcestone_pillar_horizontal", "x": 90}
+    ]
+  }
+}

@@ -23,10 +23,20 @@ public class ArsDecorBlockRegistry {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ArsDecor.MODID);
 
-    public static final DeferredBlock<Block> SOURCESTONE_PILLAR = BLOCKS.register(
+    // Registering sourcestone variants
+    public static final DeferredBlock<Block> SOURCESTONE_PILLAR = registerBlock(
             "sourcestone_pillar",
-            registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                .explosionResistance(6.0f)
+                .requiresCorrectToolForDrops()
+            )
+    );
+
+    public static final DeferredBlock<Block> SMOOTH_SOURCESTONE_PILLAR = registerBlock(
+            "smooth_sourcestone_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
                     .explosionResistance(6.0f)
+                    .requiresCorrectToolForDrops()
             )
     );
 
