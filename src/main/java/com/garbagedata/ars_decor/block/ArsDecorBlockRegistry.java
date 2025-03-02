@@ -2,6 +2,11 @@ package com.garbagedata.ars_decor.block;
 
 import com.garbagedata.ars_decor.ArsDecor;
 import com.garbagedata.ars_decor.item.ArsDecorItemRegistry;
+
+// Block entities that Ars Decor will extend
+import com.hollingsworth.arsnouveau.common.block.ArcanePedestal;
+import com.hollingsworth.arsnouveau.common.block.ArcanePlatform;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -35,6 +40,14 @@ public class ArsDecorBlockRegistry {
     public static final DeferredBlock<Block> SMOOTH_SOURCESTONE_PILLAR = registerBlock(
             "smooth_sourcestone_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                .explosionResistance(6.0f)
+                .requiresCorrectToolForDrops()
+            )
+    );
+
+    public static final DeferredBlock<Block> CHISELED_SOURCESTONE = registerBlock(
+            "chiseled_sourcestone",
+            () -> new Block(BlockBehaviour.Properties.of()
                     .explosionResistance(6.0f)
                     .requiresCorrectToolForDrops()
             )

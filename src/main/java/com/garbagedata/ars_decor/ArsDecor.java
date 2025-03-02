@@ -59,6 +59,7 @@ public class ArsDecor {
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ArsDecorBlockRegistry.SOURCESTONE_PILLAR);
             event.accept(ArsDecorBlockRegistry.SMOOTH_SOURCESTONE_PILLAR);
+            event.accept(ArsDecorBlockRegistry.CHISELED_SOURCESTONE);
         }
     }
 
