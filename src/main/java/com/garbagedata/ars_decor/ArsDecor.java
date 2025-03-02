@@ -1,7 +1,7 @@
 package com.garbagedata.ars_decor;
 
-import com.garbagedata.ars_decor.registry.ModRegistry;
 import com.garbagedata.ars_decor.block.ArsDecorBlockRegistry;
+import com.garbagedata.ars_decor.item.ArsDecorItemRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
@@ -26,9 +26,11 @@ public class ArsDecor {
     public ArsDecor(IEventBus modEventBus, ModContainer modContainer) {
         // register my fucking blocks please
         ArsDecorBlockRegistry.register(modEventBus);
+        // okay can it do items now?
+        ArsDecorItemRegistry.register(modEventBus);
 
-        ModRegistry.registerRegistries(modEventBus);
-        ArsNouveauRegistry.registerGlyphs();
+        modEventBus.addListener(this::addCreative);
+
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);
         NeoForge.EVENT_BUS.register(this);
@@ -39,7 +41,7 @@ public class ArsDecor {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        ArsNouveauRegistry.registerSounds();
+
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

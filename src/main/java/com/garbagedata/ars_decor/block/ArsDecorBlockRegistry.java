@@ -25,7 +25,7 @@ public class ArsDecorBlockRegistry {
 
     public static final DeferredBlock<Block> SOURCESTONE_PILLAR = BLOCKS.register(
             "sourcestone_pillar",
-            registryName -> new Block(BlockBehaviour.Properties.of()
+            registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
                     .explosionResistance(6.0f)
             )
     );

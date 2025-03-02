@@ -1,9 +1,7 @@
 package com.garbagedata.ars_decor;
 
 import com.garbagedata.ars_decor.glyphs.TestEffect;
-import com.garbagedata.ars_decor.registry.ModRegistry;
 import com.hollingsworth.arsnouveau.api.registry.GlyphRegistry;
-import com.hollingsworth.arsnouveau.api.registry.SpellSoundRegistry;
 import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
 
 import java.util.ArrayList;
@@ -15,9 +13,6 @@ public class ArsNouveauRegistry {
 
     public static void registerGlyphs(){
         register(TestEffect.INSTANCE);
-    }
-    public static void registerSounds(){
-        SpellSoundRegistry.registerSpellSound(ModRegistry.EXAMPLE_SPELL_SOUND);
     }
     public static void register(AbstractSpellPart spellPart){
         GlyphRegistry.registerSpell(spellPart);
