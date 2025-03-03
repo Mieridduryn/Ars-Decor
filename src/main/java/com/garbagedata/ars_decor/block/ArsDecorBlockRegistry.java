@@ -53,6 +53,14 @@ public class ArsDecorBlockRegistry {
             )
     );
 
+    public static final DeferredBlock<Block> SOURCEGLASS = registerBlock(
+            "sourceglass",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.GLASS)
+            )
+    );
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

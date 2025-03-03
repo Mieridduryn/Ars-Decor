@@ -1,0 +1,13 @@
+{
+  "loader": "fusion:model",
+  "type": "connecting",
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ars_decor:block/sourceglass"
+  },
+  "connections": [
+    {
+      "type": "is_same_block"
+    }
+  ]
+}

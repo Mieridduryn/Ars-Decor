@@ -49,3 +49,11 @@ modId = "ars_nouveau"
 versionRange = "[1.21.1-5.4,)"
 ordering = "AFTER"
 side = "BOTH"
+
+# Fusion as a required dependency
+[[dependencies.ars_decor]]
+modId="fusion"
+type="required"
+versionRange="[1.0.0,)"
+ordering="NONE"
+side="CLIENT"
