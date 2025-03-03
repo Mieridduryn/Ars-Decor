@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ars_decor:sourcestone_pillar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ars_nouveau:sourcestone"
+  }
+}
