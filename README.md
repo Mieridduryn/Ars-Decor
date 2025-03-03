@@ -6,3 +6,4 @@ GD's lackluster Ars Nouveau addon that adds decorative things. I promise nothing
 - KaupenJoe for the modding tutorials + his example mods
 - mystchonky for general guidance and being supportive
 - Ars Nouveau Discord server in general
+- Brothers_Trouble
