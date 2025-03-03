@@ -63,9 +63,13 @@ public class ArsDecorBlockRegistry {
 
     public static final DeferredBlock<Block> SOURCEGLASS = registerBlock(
             "sourceglass",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.GLASS)
+            () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
+            )
+    );
+
+    public static final DeferredBlock<Block> GILDED_SOURCEGLASS = registerBlock(
+            "gilded_sourceglass",
+            () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
             )
     );
 

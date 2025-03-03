@@ -9,6 +9,6 @@
   ],
   "render_type": "translucent",
   "textures": {
-    "all": "ars_decor:block/sourceglass"
+    "all": "ars_decor:block/gilded_sourceglass"
   }
 }
