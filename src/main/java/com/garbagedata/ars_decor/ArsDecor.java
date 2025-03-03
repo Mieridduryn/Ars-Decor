@@ -60,6 +60,7 @@ public class ArsDecor {
             event.accept(ArsDecorBlockRegistry.SOURCESTONE_PILLAR);
             event.accept(ArsDecorBlockRegistry.SMOOTH_SOURCESTONE_PILLAR);
             event.accept(ArsDecorBlockRegistry.CHISELED_SOURCESTONE);
+            event.accept(ArsDecorBlockRegistry.CHISELED_SMOOTH_SOURCESTONE);
             event.accept(ArsDecorBlockRegistry.SOURCEGLASS);
         }
     }

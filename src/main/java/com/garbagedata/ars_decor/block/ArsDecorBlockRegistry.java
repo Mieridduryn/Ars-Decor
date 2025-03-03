@@ -53,6 +53,14 @@ public class ArsDecorBlockRegistry {
             )
     );
 
+    public static final DeferredBlock<Block> CHISELED_SMOOTH_SOURCESTONE = registerBlock(
+            "chiseled_smooth_sourcestone",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .explosionResistance(6.0f)
+                    .requiresCorrectToolForDrops()
+            )
+    );
+
     public static final DeferredBlock<Block> SOURCEGLASS = registerBlock(
             "sourceglass",
             () -> new Block(BlockBehaviour.Properties.of()
